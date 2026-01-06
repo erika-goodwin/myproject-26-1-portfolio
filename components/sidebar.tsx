@@ -1,7 +1,17 @@
+"use client";
+
+import { Leaf } from "lucide-react";
+import { useActiveSection } from "@/hooks/useActivateSection";
+import { clsx } from "clsx";
+
 import { profile } from "@/content/profile";
 import Image from "next/image";
 
+const sectionIds = ["about", "experience", "projects", "contact"];
+
 export default function Sidebar() {
+  const activeId = useActiveSection(sectionIds);
+
   return (
     <aside className="md:sticky md:top-24 h-fit">
       <div className="space-y-8">
@@ -16,7 +26,34 @@ export default function Sidebar() {
 
         {/* Table of contents */}
         <nav className="space-y-3 text-sm">
-          {profile.navigation.map((item) => {
+          {sectionIds.map((id) => {
+            const item = profile.navigation.find((n) => n.href === `#${id}`);
+            const isActive = activeId === id;
+
+            return (
+              <a
+                key={id}
+                href={`#${id}`}
+                className={clsx(
+                  "flex items-center gap-2 transition-all duration-300",
+                  isActive
+                    ? "text-emerald-500 font-semibold translate-x-1"
+                    : "text-gray-500 hover:text-gray-800"
+                )}
+              >
+                <Leaf
+                  className={clsx(
+                    "h-4 w-4 transition-all duration-300",
+                    isActive
+                      ? "opacity-100 scale-100 text-emerald-400"
+                      : "opacity-0 scale-75"
+                  )}
+                />
+                {item?.label}
+              </a>
+            );
+          })}
+          {/* {profile.navigation.map((item) => {
             return (
               <a
                 href={item.href}
@@ -26,7 +63,7 @@ export default function Sidebar() {
                 {item.label}
               </a>
             );
-          })}
+          })} */}
         </nav>
 
         {/* Social links */}

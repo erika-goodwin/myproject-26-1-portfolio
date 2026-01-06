@@ -21,12 +21,12 @@ export const profile: {
   socials: SocialItem[];
 } = {
   name: "Erika Hashizume",
-  title: "Frontend/Fullstack Engineer",
+  title: "Frontend/Fullstack Engineer · CRO developer",
   intro:
-    "🌵 Engineer with aviation-grade reliability, CRO experimentation mindset, and modern Next.js product development.",
+    "🌵 Frontend/Fullstack engineer with a background in aerospace engineering and data driven product experimentation.",
 
   location: "📍 Brittany, France 🇫🇷",
-  availability: "💼 Open to frontend & full-stack roles",
+  availability: "💼 Actively seeking employment",
 
   navigation: [
     { label: "About", href: "#about" },

@@ -14,7 +14,7 @@ export default function Home() {
         <Sidebar />
 
         {/* Right */}
-        <div className="space-y-32 ml-32 overflow-hidden">
+        <div className="space-y-32 ml-32">
           <About />
           <Experience />
           <Projects />

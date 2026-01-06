@@ -2,8 +2,10 @@ export const introduction: {
   intro: string[];
 } = {
   intro: [
-    "Experienced frontend developer with a background in conversion optimization and agency workflows. Legally authorized to work for Canadian companies as a PR holder. ",
-    "Based in France, open to working Canadian business hours remotely.Having an engineering degree in Aerospace Engineering since 2017, I worked as a Mechanical Engineer ( Airline System Engineer ) at a domestic airline in Japan for 4 years (Apr 2017-Mar 2021).",
-    " Additionally, having a diploma in Web and Mobile App development since 2023, I've worked for a marketing agency in Canada for 3 years (June 2022-Apr2025). Currently located in France, working as a CRO web developer / contractor while boosting my French.",
+    "I am a frontend / fullstack engineer with over three years of experience in conversion rate optimization and agency based development, and international professional experience across Japan and Canada. ",
+    " I combine modern frontend development with an experimentation mindset to deliver measurable product impact, grounded in a strong foundation of engineering reliability and performance.",
+    "I began my career as an aerospace engineer in Japan, where I developed a deep appreciation for precision, documentation, and problem solving under pressure in safety critical environments. After transitioning into web development, I spent several years working in CRO focused agencies, building and maintaining A/B tests, improving UX and performance, and collaborating closely with designers, strategists, and analysts to turn hypotheses into validated outcomes for larges cale websites.",
+    "Today, I focus on building maintainable and performant web interfaces using React and Next.js. I enjoy learning new tools, patterns, and technologies, and I’m motivated by continuous growth—both technically and as a collaborator while applying experimentation and data informed thinking to product development.",
+    "Outside of work, I’ve always been passionate about movement and creativity. I grew up exploring music and the arts, including singing, guitar, piano, and dance. In recent years, my focus has shifted toward CrossFit and endurance training. In 2025, I competed in HYROX Women’s Doubles, finishing in 1:15:59 and placing in the top 18%. Training is a daily practice for me and reflects the discipline, consistency, and curiosity I bring to my work.",
   ],
 };

@@ -6,7 +6,7 @@ type Props = {
 
 export default function ExperienceTile({ item }: Props) {
   return (
-    <div className="w-full flex shadow-md hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg bg-white">
+    <div className="w-full flex shadow-md hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg hover:bg-white opacity">
       {/* Left time */}
       <div className="w-24 flex-shrink-0 text-gray-500 font-mono text-xs mt-2">
         {item.time}
