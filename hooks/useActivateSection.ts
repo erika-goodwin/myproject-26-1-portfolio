@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-export function useActiveSection(sectionIds: string[]) {
+export function useActiveSection(
+  sectionIds: string[],
+  halfway: boolean = true
+) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const midpoint = window.innerHeight / 2;
+      const midpoint = halfway
+        ? window.innerHeight / 2
+        : (window.innerHeight * 1) / 40;
 
       let current: string | null = null;
 

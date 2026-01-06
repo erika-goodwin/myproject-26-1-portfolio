@@ -13,19 +13,19 @@ export default function Sidebar() {
   const activeId = useActiveSection(sectionIds);
 
   return (
-    <aside className="md:sticky md:top-24 h-fit">
-      <div className="space-y-8">
+    <aside className="mt-30 md:mt-0 md:sticky md:top-24 h-fit">
+      <div className="relative md:static space-y-8 mr-1 lg:mr-0">
         {/* Name & intro */}
         <div>
-          <h1 className="text-2xl font-bold">{profile.name}</h1>
-          <p className="mt-2 text-sm font-bold">{profile.title}</p>
+          <h1 className="text-4xl font-bold">{profile.name}</h1>
+          <p className="mt-2 text-md font-bold">{profile.title}</p>
           <p className="mt-2 text-sm">{profile.intro}</p>
           <p className="mt-2 text-sm ">{profile.location}</p>
           <p className="mt-2 text-sm ">{profile.availability}</p>
         </div>
 
         {/* Table of contents */}
-        <nav className="space-y-3 text-sm">
+        <nav className="hidden md:block space-y-3 text-sm">
           {sectionIds.map((id) => {
             const item = profile.navigation.find((n) => n.href === `#${id}`);
             const isActive = activeId === id;
@@ -56,7 +56,7 @@ export default function Sidebar() {
         </nav>
 
         {/* Social links */}
-        <div className="flex space-x-4 text-sm">
+        <div className="flex space-x-4 text-sm ">
           {profile.socials.map((item) => {
             const Icon = item.icon;
             return (
@@ -80,7 +80,7 @@ export default function Sidebar() {
           height={300}
           // fill
           // style={{ objectFit: "contain" }}
-          className="fixed bottom-0 left-auto mb-3 opacity-80"
+          className="absolute md:fixed bottom-0 right-0 md:right-auto md:left-auto mb-3 opacity-80 w-36 md:w-72 h-auto"
         />
       </div>
     </aside>
