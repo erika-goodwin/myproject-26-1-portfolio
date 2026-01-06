@@ -19,7 +19,7 @@ export default function Home() {
           <Cro />
 
           {/* Scroll buffer */}
-          <div className="h-[50vh] flex items-end justify-end pb-8 text-sm text-gray-400">
+          <div className="h-[50vh] flex items-end justify-end pb-8 text-sm bg-primary text-gray-400">
             <p>© {new Date().getFullYear()} Erika Hashizume</p>
           </div>
         </div>

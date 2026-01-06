@@ -19,7 +19,7 @@ export default function Sidebar() {
         <div>
           <h1 className="text-2xl font-bold">{profile.name}</h1>
           <p className="mt-2 text-sm font-bold">{profile.title}</p>
-          <p className="mt-2 text-sm text-accent-red ">{profile.intro}</p>
+          <p className="mt-2 text-sm">{profile.intro}</p>
           <p className="mt-2 text-sm ">{profile.location}</p>
           <p className="mt-2 text-sm ">{profile.availability}</p>
         </div>
@@ -37,7 +37,7 @@ export default function Sidebar() {
                 className={clsx(
                   "flex items-center gap-2 transition-all duration-300",
                   isActive
-                    ? "text-emerald-500 font-semibold translate-x-1"
+                    ? "text-off-blue font-semibold translate-x-1"
                     : "text-gray-500 hover:text-gray-800"
                 )}
               >
@@ -45,7 +45,7 @@ export default function Sidebar() {
                   className={clsx(
                     "h-4 w-4 transition-all duration-300",
                     isActive
-                      ? "opacity-100 scale-100 text-emerald-400"
+                      ? "opacity-100 scale-100 text-off-blue"
                       : "opacity-0 scale-75"
                   )}
                 />
@@ -53,17 +53,6 @@ export default function Sidebar() {
               </a>
             );
           })}
-          {/* {profile.navigation.map((item) => {
-            return (
-              <a
-                href={item.href}
-                key={item.href}
-                className="block text-accent-red hover:text-main-black"
-              >
-                {item.label}
-              </a>
-            );
-          })} */}
         </nav>
 
         {/* Social links */}
@@ -74,12 +63,12 @@ export default function Sidebar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center space-x-1 text-accent-red hover:text-main-black"
+                className="flex items-center space-x-1  hover:text-off-pink"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-details={item.label}
               >
-                <Icon className="w-5 h-5 text-accent-red hover:text-main-black" />
+                <Icon className="w-5 h-5  hover:text-off-pink" />
               </a>
             );
           })}

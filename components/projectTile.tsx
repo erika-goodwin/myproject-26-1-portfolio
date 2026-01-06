@@ -8,7 +8,7 @@ import {
   Globe,
   Github,
   Code,
-  Server,
+  // Server,
   Database,
 } from "lucide-react";
 import { ProjectItem, TechIconKey } from "@/content/project";
@@ -32,7 +32,7 @@ export default function ProjectTile({ project }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="rounded-lg  hover:bg-white shadow-sm shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div className="group/projectTile rounded-lg  hover:bg-white shadow-sm shadow-md hover:shadow-xl transition-shadow duration-300 group-hover/project:opacity-75 hover:opacity-100">
       {/* <div className="rounded-xl border bg-white shadow-sm hover:shadow-lg transition-shadow"> */}
       {/* Header */}
       <button
@@ -56,7 +56,7 @@ export default function ProjectTile({ project }: Props) {
             <a
               href={project.links.website}
               target="_blank"
-              className="text-gray-600 hover:text-accent-red"
+              className="text-gray-600 hover:text-off-pink"
             >
               <Globe className="w-5 h-5" />
             </a>
@@ -65,7 +65,7 @@ export default function ProjectTile({ project }: Props) {
             <a
               href={project.links.github}
               target="_blank"
-              className="text-gray-600 hover:text-accent-red"
+              className="text-gray-600 hover:text-off-pink"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -95,7 +95,7 @@ export default function ProjectTile({ project }: Props) {
               return (
                 <span
                   key={tech}
-                  className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs"
+                  className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs group-hover/projectTile:bg-off-pink"
                 >
                   <Icon className="w-4 h-4 text-gray-700 mr-1" />
                   {tech}

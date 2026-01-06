@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section id="experience" className="space-y-6 mt-24 scroll-mt-24">
       <h2 className="text-2xl font-bold mb-4">Experience</h2>
-      <div className="space-y-4">
+      <div className="group/experience space-y-4">
         {experiences.experienceItems.map((item) => (
           <ExperienceTile key={item.id} item={item} />
         ))}

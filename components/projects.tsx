@@ -7,7 +7,7 @@ export default function Projects() {
     <section id="projects" className="space-y-6 scroll-mt-24">
       <h2 className="text-2xl font-bold">Projects</h2>
 
-      <div className="space-y-4">
+      <div className="group/project space-y-4">
         {projects.projectItems.map((project) => (
           <ProjectTile key={project.id} project={project} />
         ))}
