@@ -6,7 +6,7 @@ export type ProjectItem = {
   summary: string;
   description: string[];
   image: string;
-  techs: string[]; // 👈 string keys ONLY
+  techs: string[]; 
   links: {
     website?: string;
     github?: string;

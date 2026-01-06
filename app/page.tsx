@@ -1,10 +1,8 @@
 import About from "@/components/about";
-import Contact from "@/components/contact";
+import Cro from "@/components/cro";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
 import Sidebar from "@/components/sidebar";
-// import saboten from "./saboten.png";
-// import Image from "next/image";
 
 export default function Home() {
   return (
@@ -18,7 +16,12 @@ export default function Home() {
           <About />
           <Experience />
           <Projects />
-          <Contact />
+          <Cro />
+
+          {/* Scroll buffer */}
+          <div className="h-[50vh] flex items-end justify-end pb-8 text-sm text-gray-400">
+            <p>© {new Date().getFullYear()} Erika Hashizume</p>
+          </div>
         </div>
       </div>
     </main>

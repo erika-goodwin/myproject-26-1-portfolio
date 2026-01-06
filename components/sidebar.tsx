@@ -7,7 +7,7 @@ import { clsx } from "clsx";
 import { profile } from "@/content/profile";
 import Image from "next/image";
 
-const sectionIds = ["about", "experience", "projects", "contact"];
+const sectionIds = ["about", "experience", "projects", "cro"];
 
 export default function Sidebar() {
   const activeId = useActiveSection(sectionIds);

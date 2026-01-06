@@ -32,7 +32,7 @@ export const profile: {
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "CRO", href: "#cro" },
   ],
 
   socials: [
