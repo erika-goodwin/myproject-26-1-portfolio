@@ -35,7 +35,7 @@ export default function Sidebar() {
                 key={id}
                 href={`#${id}`}
                 className={clsx(
-                  "flex items-center gap-2 transition-all duration-300",
+                  "flex items-center gap-2 transition-all duration-300 hover:scale-105 transition-transform duration-200",
                   isActive
                     ? "text-off-blue font-semibold translate-x-1"
                     : "text-gray-500 hover:text-gray-800"
@@ -56,14 +56,14 @@ export default function Sidebar() {
         </nav>
 
         {/* Social links */}
-        <div className="flex space-x-4 text-sm ">
+        <div className="flex space-x-1 text-sm ">
           {profile.socials.map((item) => {
             const Icon = item.icon;
             return (
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center space-x-1  hover:text-off-pink"
+                className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-details={item.label}

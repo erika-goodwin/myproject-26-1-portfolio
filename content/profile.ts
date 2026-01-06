@@ -1,4 +1,10 @@
-import { Github, Linkedin, MailIcon, Instagram } from "lucide-react";
+import {
+  LucideIcon,
+  Github,
+  Linkedin,
+  MailIcon,
+  Instagram,
+} from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -8,7 +14,7 @@ type NavItem = {
 type SocialItem = {
   label: string;
   href: string;
-  icon: string;
+  icon: LucideIcon;
 };
 
 export const profile: {
