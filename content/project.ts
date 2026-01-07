@@ -46,29 +46,29 @@ export const projects: { link: string; projectItems: ProjectItem[] } = {
       },
     },
 
-    {
-      id: "daily-wod-tracker",
-      title: "Daily WOD Tracker",
-      summary:
-        "A fullstack Next.js app for logging daily workouts with authentication and history.",
-      image: "/images/projects/workout-app.png",
-      description: [
-        "Modern fitness tracking app built with Next.js App Router and Supabase.",
-        "Includes authentication (email & GitHub), daily WOD fetching via API route, and workout history.",
-        "Users can log completion status and personal notes for each workout.",
-        "Designed with a minimal, professional fitness tech aesthetic.",
-      ],
-      techs: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Supabase",
-        "PostgreSQL",
-      ],
-      links: {
-        github: "https://github.com/erika-goodwin/myproject-25-4-wod-app",
-        website: "https://daily-wod.vercel.app",
-      },
-    },
+    // {
+    //   id: "daily-wod-tracker",
+    //   title: "Daily WOD Tracker",
+    //   summary:
+    //     "A fullstack Next.js app for logging daily workouts with authentication and history.",
+    //   image: "/images/projects/workout-app.png",
+    //   description: [
+    //     "Modern fitness tracking app built with Next.js App Router and Supabase.",
+    //     "Includes authentication (email & GitHub), daily WOD fetching via API route, and workout history.",
+    //     "Users can log completion status and personal notes for each workout.",
+    //     "Designed with a minimal, professional fitness tech aesthetic.",
+    //   ],
+    //   techs: [
+    //     "Next.js",
+    //     "TypeScript",
+    //     "Tailwind CSS",
+    //     "Supabase",
+    //     "PostgreSQL",
+    //   ],
+    //   links: {
+    //     github: "https://github.com/erika-goodwin/myproject-25-4-wod-app",
+    //     website: "https://daily-wod.vercel.app",
+    //   },
+    // },
   ],
 };

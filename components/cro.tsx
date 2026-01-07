@@ -17,7 +17,7 @@ export default function Cro() {
         {/* {croProjects.map((project) => (
           <ProjectTile key={project.id} project={project} />
         ))} */}
-        Preparing ... 
+        Coming soon ... 
       </div>
       {/* <div className="flex flex-row items-center">
         <p className="mr-4 font-bold">View More </p>
