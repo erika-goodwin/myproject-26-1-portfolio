@@ -12,6 +12,8 @@ import {
   Database,
 } from "lucide-react";
 import { ProjectItem, TechIconKey } from "@/content/project";
+import { useActiveItem } from "@/hooks/useActiveItem";
+import clsx from "clsx";
 
 const techIconMap: Record<TechIconKey, React.ElementType> = {
   React: Code,
@@ -30,10 +32,21 @@ type Props = {
 
 export default function ProjectTile({ project }: Props) {
   const [open, setOpen] = useState(false);
+  const { ref, active } = useActiveItem<HTMLDivElement>();
 
   return (
-    <div className="group/projectTile rounded-lg  hover:bg-white shadow-md hover:shadow-xl transition-shadow duration-300 group-hover/project:opacity-75 hover:opacity-100">
-      {/* <div className="rounded-xl border bg-white shadow-sm hover:shadow-lg transition-shadow"> */}
+    <div
+      ref={ref}
+      className={clsx(
+        "group/projectTile rounded-lg  shadow-md  transition-shadow duration-300",
+        // Desktop hover
+        " hover:shadow-xl hover:bg-white hover:border-off-pink group-hover/project:opacity-75  hover:opacity-100",
+        // mobile activation
+        active
+          ? "bg-white shadow-xl border-off-pink group-hover/project:opacity-75 opacity-100"
+          : ""
+      )}
+    >
       {/* Header */}
       <button
         onClick={() => setOpen(!open)}
@@ -95,7 +108,13 @@ export default function ProjectTile({ project }: Props) {
               return (
                 <span
                   key={index}
-                  className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs group-hover/projectTile:bg-off-pink"
+                  className={clsx(
+                    "flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs ",
+                    // Desktop hover
+                    "group-hover/projectTile:bg-off-pink",
+                    // mobile activation
+                    active ? "bg-off-pink" : ""
+                  )}
                 >
                   <Icon className="w-4 h-4 text-gray-700 mr-1" />
                   {tech}

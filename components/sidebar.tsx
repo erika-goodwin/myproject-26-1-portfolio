@@ -78,8 +78,6 @@ export default function Sidebar() {
           alt="Saboten"
           width={300}
           height={300}
-          // fill
-          // style={{ objectFit: "contain" }}
           className="absolute md:fixed bottom-0 right-0 md:right-auto md:left-auto mb-3 opacity-80 w-36 md:w-72 h-auto"
         />
       </div>

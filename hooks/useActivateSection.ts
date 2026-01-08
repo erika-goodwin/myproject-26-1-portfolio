@@ -39,34 +39,4 @@ export function useActiveSection(
   }, [sectionIds, activeId]);
 
   return activeId;
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         console.log(
-  //           ">>>>>> here observe ",
-  //           sectionIds,
-  //           entry.isIntersecting,
-  //           entry.intersectionRatio
-  //         );
-  //         if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
-  //           setActiveId(entry.target.id);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: [0.75],
-  //     }
-  //   );
-
-  //   sectionIds.forEach((id) => {
-  //     const el = document.getElementById(id);
-
-  //     if (el) observer.observe(el);
-  //     if (el) console.log(">>>>>>> ID checker:", id);
-  //   });
-
-  //   return () => observer.disconnect();
-  // }, [sectionIds]);
 }

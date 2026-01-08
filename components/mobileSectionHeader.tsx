@@ -26,14 +26,5 @@ export default function MobileSectionHeader({ title }: Props) {
         </AnimatePresence>
       </div>
     </div>
-    // <div className="fixed top-0 left-0 right-0 z-40 md:hidden bg-off-white/90 backdrop-blur-sm ">
-    //   <div className="py-3 max-w-6xl px-6">
-    //     <div className="flex items-center gap-3 px-4 py-3 border-b ">
-    //       <h2 className="text-sm font-semibold uppercase tracking-wide">
-    //         {title}
-    //       </h2>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
