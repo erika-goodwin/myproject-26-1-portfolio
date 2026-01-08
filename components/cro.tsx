@@ -1,5 +1,5 @@
-import ProjectTile from "./projectTile";
-import { croProjects } from "@/content/cro";
+// import ProjectTile from "./projectTile";
+// import { croProjects } from "@/content/cro";
 // import ButtonLink from "./botton";
 
 export default function Cro() {

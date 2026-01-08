@@ -1,5 +1,3 @@
-
-
 export type TechIconKey =
   | "HTML"
   | "CSS"
@@ -24,7 +22,6 @@ export type ExperienceItem = {
   time: string;
   details: string[];
   techs: TechIconKey[];
-  // techs: name: string; icon: TechIconKey[] }[];
 };
 
 export const experiences: {

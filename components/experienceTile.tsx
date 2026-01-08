@@ -30,7 +30,6 @@ type Props = {
 
 export default function ExperienceTile({ item }: Props) {
   const { ref, active } = useActiveItem<HTMLDivElement>();
-  // const { ref, inView } = useInView<HTMLDivElement>(0.75);
 
   return (
     <div
@@ -66,12 +65,9 @@ export default function ExperienceTile({ item }: Props) {
         <div className="flex flex-wrap space-x-2 mt-3">
           {item.techs.map((tech) => {
             const Icon = techIconMap[tech] ?? Code;
-            // const Icon = tech.icon;
             return (
               <div
                 key={tech}
-                // key={tech.name}
-
                 className={clsx(
                   "flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs",
                   // Desktop hover
@@ -81,7 +77,7 @@ export default function ExperienceTile({ item }: Props) {
                 )}
               >
                 <Icon className="w-4 h-4 text-gray-700" />
-                {/* <span className="text-xs">{tech.name}</span> */}
+
                 {tech}
               </div>
             );

@@ -47,7 +47,6 @@ export default function ProjectTile({ project }: Props) {
           : ""
       )}
     >
-      {/* <div className="rounded-xl border bg-white shadow-sm hover:shadow-lg transition-shadow"> */}
       {/* Header */}
       <button
         onClick={() => setOpen(!open)}
@@ -109,7 +108,6 @@ export default function ProjectTile({ project }: Props) {
               return (
                 <span
                   key={index}
-                  // className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs group-hover/projectTile:bg-off-pink"
                   className={clsx(
                     "flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs ",
                     // Desktop hover
