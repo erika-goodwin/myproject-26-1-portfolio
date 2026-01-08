@@ -71,7 +71,14 @@ export default function ExperienceTile({ item }: Props) {
               <div
                 key={tech}
                 // key={tech.name}
-                className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 group-hover/experienceTile:bg-off-pink"
+
+                className={clsx(
+                  "flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs",
+                  // Desktop hover
+                  " group-hover/experienceTile:bg-off-pink",
+                  // mobile activation
+                  active ? "bg-off-pink" : ""
+                )}
               >
                 <Icon className="w-4 h-4 text-gray-700" />
                 {/* <span className="text-xs">{tech.name}</span> */}
