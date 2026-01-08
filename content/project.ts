@@ -15,7 +15,8 @@ export type ProjectItem = {
   title: string;
   summary: string;
   description: string[];
-  image: string;
+  thumbnail: string;
+  images: string[];
   techs: TechIconKey[];
   links: {
     website?: string;
@@ -31,7 +32,11 @@ export const projects: { link: string; projectItems: ProjectItem[] } = {
       title: "Simplified Workout Record App",
       summary:
         "A lightweight React + TypeScript app to log workouts with local persistence.",
-      image: "/images/projects/workout-app.png",
+      thumbnail: "/images/projects/workout-record-app/wod-1.png",
+      images: [
+        "/images/projects/workout-record-app/wod-shot-1.png",
+        "/images/projects/workout-record-app/wod-shot-2.png",
+      ],
       description: [
         "Single page workout tracking app focused on simplicity and usability.",
         "Users can add, view, and delete workouts including exercise, weight, reps, and date.",
