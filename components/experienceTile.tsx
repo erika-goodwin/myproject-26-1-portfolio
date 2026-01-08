@@ -35,7 +35,7 @@ export default function ExperienceTile({ item }: Props) {
     <div
       ref={ref}
       className={clsx(
-        "group/experienceTile w-full flex shadow-md transition-shadow duration-300 p-6 rounded-lg ",
+        "group/experienceTile w-full flex shadow-md transition-shadow duration-300 px-3 py-6 lg:p-6 rounded-lg ",
         // Desktop hover
         " hover:shadow-xl hover:bg-white hover:border-off-pink group-hover/experience:opacity-75 hover:opacity-100",
         // mobile activation
@@ -45,12 +45,12 @@ export default function ExperienceTile({ item }: Props) {
       )}
     >
       {/* Left time */}
-      <div className="w-24 flex-shrink-0 text-gray-500 font-mono text-xs mt-2">
+      <div className="w-18 lg:w-24 flex-shrink-0 text-gray-500 font-mono text-xs mt-2">
         {item.time}
       </div>
 
       {/* Right content */}
-      <div className="ml-6 flex-1 w-4/5">
+      <div className="ml-4 lg:ml-6 flex-1 w-4/5">
         <h3 className="font-bold text-lg text-accentred">{item.title}</h3>
         <p className="text-sm text-gray-600 mb-2">{item.company}</p>
 

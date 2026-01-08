@@ -5,9 +5,9 @@ import ButtonLink from "./botton";
 export default function Projects() {
   return (
     <>
-      <section id="projects" className="space-y-6 scroll-mt-24">
+      <section id="projects" className="space-y-6 scroll-mt-24 mx-auto max-w-[42rem] lg:max-w-none">
         {/* Sticky header (mobile only) */}
-        <div className="sticky top-0 z-20 bg-off-white md:hidden ">
+        <div className="sticky top-0 z-20 bg-off-white lg:hidden ">
           <div className="flex items-center gap-3 px-4 py-3 border-b">
             <h2 className="text-sm font-semibold uppercase tracking-wide">
               Projects
@@ -15,7 +15,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <h2 className="hidden md:inline-block text-2xl font-bold">Projects</h2>
+        <h2 className="hidden lg:inline-block text-2xl font-bold">Projects</h2>
 
         <div className="group/project space-y-4">
           {projects.projectItems.map((project) => (
