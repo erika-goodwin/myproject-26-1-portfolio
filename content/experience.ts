@@ -1,11 +1,20 @@
-import {
-  LucideIcon,
-  Code,
-  Server,
-  Drill,
-  EthernetPort,
-  Github,
-} from "lucide-react";
+
+
+export type TechIconKey =
+  | "HTML"
+  | "CSS"
+  | "JavaScript"
+  | "VWO"
+  | "Adobe Target"
+  | "Optimizely"
+  | "Dynamic Yield"
+  | "Monetate"
+  | "Convert"
+  | "Google Optimize"
+  | "Github"
+  | "JIRA"
+  | "CSS/TailwindCSS"
+  | "Astro";
 
 export type ExperienceItem = {
   id: string;
@@ -13,7 +22,8 @@ export type ExperienceItem = {
   title: string;
   time: string;
   details: string[];
-  techs: { name: string; icon: LucideIcon }[];
+  techs: TechIconKey[];
+  // techs: name: string; icon: TechIconKey[] }[];
 };
 
 export const experiences: {
@@ -35,12 +45,7 @@ export const experiences: {
         "Enhancing user experience and conversion rates through A/B testing, UI refinements, and performance improvements",
         "Developing and maintaining WordPress websites for charity organizations, including creating seasonal landing pages, fixing UI/UX issues, and optimizing site performance.",
       ],
-      techs: [
-        { name: "HTML", icon: Code },
-        { name: "CSS", icon: Code },
-        { name: "JavaScript", icon: Code },
-        { name: "VWO", icon: Drill },
-      ],
+      techs: ["HTML", "CSS", "JavaScript", "VWO"],
     },
     {
       id: "2",
@@ -54,18 +59,18 @@ export const experiences: {
         "Adhered strictly to Figma designs, collaborating closely with project managers to align with and enhance the strategic goals of the user experience.",
       ],
       techs: [
-        { name: "HTML", icon: Code },
-        { name: "CSS", icon: Code },
-        { name: "JavaScript", icon: Code },
-        { name: "Adobe Target", icon: Drill },
-        { name: "Optimizely", icon: Drill },
-        { name: "Kameleoon", icon: Drill },
-        { name: "Dynamic Yield", icon: Drill },
-        { name: "Monetate", icon: Drill },
-        { name: "Convert", icon: Drill },
-        { name: "Google Optimize", icon: Drill },
-        { name: "Github", icon: Github },
-        { name: "JIRA", icon: EthernetPort },
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Adobe Target",
+        "Optimizely",
+        "Kameleoon",
+        "Dynamic Yield",
+        "Monetate",
+        "Convert",
+        "Google Optimize",
+        "Github",
+        "JIRA",
       ],
     },
     {
@@ -77,14 +82,7 @@ export const experiences: {
         "Contracted at Jetpack Labs to develop web applications delivering robust and user friendly solutions.",
         "Collaborated closely with designers to ensure alignment with Figma designs, proactively communicating to resolve ambiguities and ensure design accuracy.",
       ],
-      techs: [
-        { name: "HTML", icon: Code },
-        { name: "CSS/TailwindCSS", icon: Code },
-        { name: "JavaScript", icon: Code },
-        { name: "Astro", icon: Server },
-        { name: "Github", icon: Github },
-        { name: "", icon: EthernetPort },
-      ],
+      techs: ["HTML", "CSS/TailwindCSS", "JavaScript", "Astro", "Github"],
     },
     {
       id: "4",
@@ -95,14 +93,7 @@ export const experiences: {
         "Maintained and updated airplane manuals and analyzed reliability for B737 and B767 models, managing unscheduled failures and defects to ensure operational efficiency.",
         "Demonstrated strong planning, troubleshooting, and problem solving skills by effectively managing routine and urgent tasks and maintaining performance under pressure.",
       ],
-      techs: [
-        { name: "HTML", icon: Code },
-        { name: "CSS/TailwindCSS", icon: Code },
-        { name: "JavaScript", icon: Code },
-        { name: "Astro", icon: Server },
-        { name: "Github", icon: Github },
-        { name: "", icon: EthernetPort },
-      ],
+      techs: [],
     },
   ],
 };

@@ -12,6 +12,8 @@ import {
   Database,
 } from "lucide-react";
 import { ProjectItem, TechIconKey } from "@/content/project";
+import { useActiveItem } from "@/hooks/useActiveItem";
+import clsx from "clsx";
 
 const techIconMap: Record<TechIconKey, React.ElementType> = {
   React: Code,
@@ -30,9 +32,21 @@ type Props = {
 
 export default function ProjectTile({ project }: Props) {
   const [open, setOpen] = useState(false);
+  const { ref, active } = useActiveItem<HTMLDivElement>(0.75);
 
   return (
-    <div className="group/projectTile rounded-lg  hover:bg-white shadow-md hover:shadow-xl transition-shadow duration-300 group-hover/project:opacity-75 hover:opacity-100">
+    <div
+      ref={ref}
+      className={clsx(
+        "group/projectTile rounded-lg  shadow-md  transition-shadow duration-300",
+        // Desktop hover
+        " hover:shadow-xl hover:bg-white hover:border-off-pink group-hover/project:opacity-75  hover:opacity-100",
+        // mobile activation
+        active
+          ? "bg-white shadow-xl border-off-pink group-hover/project:opacity-75 opacity-100"
+          : ""
+      )}
+    >
       {/* <div className="rounded-xl border bg-white shadow-sm hover:shadow-lg transition-shadow"> */}
       {/* Header */}
       <button
