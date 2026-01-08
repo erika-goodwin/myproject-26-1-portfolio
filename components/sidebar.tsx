@@ -3,6 +3,7 @@
 import { Leaf } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActivateSection";
 import { clsx } from "clsx";
+import { AtSign } from "lucide-react";
 
 import { profile } from "@/content/profile";
 import Image from "next/image";
@@ -63,15 +64,30 @@ export default function Sidebar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+                className={clsx(
+                  "flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200",
+                  item.label === "Instagram" && "order-last"
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-details={item.label}
+                {...(item.label === "Email"
+                  ? { "aria-label": "Email" }
+                  : { "aria-details": item.label })}
               >
                 <Icon className="w-5 h-5  hover:text-off-pink" />
               </a>
             );
           })}
+          <button
+            className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+            onClick={() => {
+              navigator.clipboard.writeText("erika.m.hashizume@email.com");
+              alert("Email copied!");
+            }}
+            aria-label="Copy email address"
+          >
+            <AtSign className="w-5 h-5  hover:text-off-pink" />
+          </button>
         </div>
         <Image
           src="/images/saboten.png"
