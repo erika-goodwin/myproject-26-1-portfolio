@@ -10,6 +10,7 @@ export type TechIconKey =
   | "Dynamic Yield"
   | "Monetate"
   | "Convert"
+  | "Kameleoon"
   | "Google Optimize"
   | "Github"
   | "JIRA"

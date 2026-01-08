@@ -15,6 +15,7 @@ const techIconMap: Record<TechIconKey, React.ElementType> = {
   Optimizely: Drill,
   "Dynamic Yield": Drill,
   Monetate: Drill,
+  Kameleoon: Drill,
   Convert: Drill,
   "Google Optimize": Drill,
   Github: Github,
@@ -28,7 +29,7 @@ type Props = {
 };
 
 export default function ExperienceTile({ item }: Props) {
-  const { ref, active } = useActiveItem<HTMLDivElement>(0.75);
+  const { ref, active } = useActiveItem<HTMLDivElement>();
   // const { ref, inView } = useInView<HTMLDivElement>(0.75);
 
   return (

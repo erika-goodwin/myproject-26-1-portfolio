@@ -32,7 +32,7 @@ type Props = {
 
 export default function ProjectTile({ project }: Props) {
   const [open, setOpen] = useState(false);
-  const { ref, active } = useActiveItem<HTMLDivElement>(0.75);
+  const { ref, active } = useActiveItem<HTMLDivElement>();
 
   return (
     <div
