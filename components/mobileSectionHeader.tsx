@@ -8,10 +8,17 @@ type Props = {
 
 export default function MobileSectionHeader({ title }: Props) {
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 md:hidden bg-off-white/90 backdrop-blur-sm ">
-      <div className="py-3 max-w-6xl px-6">
-        <AnimatePresence mode="wait">
-          <div className="flex items-center gap-3 px-4 py-3 border-b ">
+    <div className="fixed top-0 left-0 right-0 z-40 lg:hidden bg-off-white/90 backdrop-blur-sm border-b">
+      {/* Inner content container */}
+      <div
+        className="
+          mx-auto w-full
+          max-w-[42rem]
+          px-6 sm:px-4
+        "
+      >
+        <div className="py-3 px-4 sm:px-0">
+          <AnimatePresence mode="wait">
             <motion.h2
               key={title}
               initial={{ opacity: 0, y: 8 }}
@@ -22,8 +29,8 @@ export default function MobileSectionHeader({ title }: Props) {
             >
               {title}
             </motion.h2>
-          </div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

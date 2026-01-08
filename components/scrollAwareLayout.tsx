@@ -23,8 +23,8 @@ export default function ScrollAwareLayout({ children }: Props) {
       )}
 
       {/* Main layout */}
-      <main className="mx-auto max-w-6xl px-6 pt-12 md:pt-0">
-        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12">
+      <main className="mx-auto max-w-6xl px-6 pt-12 lg:pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12">
           <Sidebar />
 
           <div className="space-y-32 lg:ml-32">{children}</div>

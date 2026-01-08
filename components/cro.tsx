@@ -4,15 +4,15 @@
 
 export default function Cro() {
   return (
-    <section id="cro" className="space-y-6 mt-24 scroll-mt-24 mb-10">
+    <section id="cro" className="space-y-6 mt-24 scroll-mt-24 mb-10 mx-auto max-w-[42rem] lg:max-w-none">
       {/* Sticky header (mobile only) */}
-      <div className="sticky top-0 z-20 bg-off-white md:hidden ">
+      <div className="sticky top-0 z-20 bg-off-white lg:hidden ">
         <div className="flex items-center gap-3 px-4 py-3 border-b">
           <h2 className="text-sm font-semibold uppercase tracking-wide">CRO</h2>
         </div>
       </div>
 
-      <h2 className="hidden md:inline-block text-2xl font-bold mb-4">CRO</h2>
+      <h2 className="hidden lg:inline-block text-2xl font-bold mb-4">CRO</h2>
       <div className="space-y-4">
         {/* {croProjects.map((project) => (
           <ProjectTile key={project.id} project={project} />
