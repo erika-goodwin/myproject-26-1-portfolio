@@ -29,8 +29,8 @@ export const experiences: {
   experienceItems: ExperienceItem[];
 } = {
   resume: {
-    en: "https://drive.google.com/file/d/1S4clk96h08K_n7T92XO9UKFkiaNJDtau/view?usp=sharing",
-    fr: "https://drive.google.com/file/d/1AtG9trGiUJGx6CXi9rVcrLcPozpMwfpE/view?usp=sharing",
+    en: "https://drive.google.com/file/d/13gfNiO6VOmYmOVUi1QTgcyq_JECixnJi/view?usp=sharing",
+    fr: "https://drive.google.com/file/d/12flWUqwDmUcxbo_oVSLM4Qa0m-yTgOcO/view?usp=sharing",
   },
   experienceItems: [
     {
