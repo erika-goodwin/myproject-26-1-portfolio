@@ -8,6 +8,7 @@ import {
   Globe,
   Github,
   Code,
+  KeyRound,
   // Server,
   Database,
 } from "lucide-react";
@@ -24,6 +25,7 @@ const techIconMap: Record<TechIconKey, React.ElementType> = {
   CSS: Code,
   LocalStorage: Database,
   Supabase: Database,
+  "Supabase Auth": KeyRound,
   PostgreSQL: Database,
 };
 
