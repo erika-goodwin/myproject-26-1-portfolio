@@ -1,7 +1,7 @@
 ## My Portfolio for 2026
 _A new year, A new country, a new portfolio for a new role!_
 
-<img width="800" height="600" alt="myportfolio-shot" src="https://github.com/user-attachments/assets/223b22c7-b26b-4f75-9ee5-d9fd8bfb3295" />
+<img width="800" height="600" alt="myportfolio-shot" src="https://github.com/user-attachments/assets/f400791f-4072-46cc-923e-aa0cf129250c" />
 
 
 This is a personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
@@ -35,6 +35,8 @@ I also focused on keeping the codebase clean and scalable, treating this portfol
 This portfolio will continue to evolve as I build new projects and gain more experience. I plan to refine animations, improve accessibility, and expand project case studies with more technical depth.
 Over time, I want this portfolio to grow alongside my skills and better reflect my transition into more advanced frontend and full-stack work.
 
-  <img width="800" height="818.54" alt="myportfolio-shot-2" src="https://github.com/user-attachments/assets/4a52069b-02dd-4940-ab95-10f58d7b4b31" /> \
+  <img width="800" height="818.54" alt="myportfolio-shot-2" src="https://github.com/user-attachments/assets/4a52069b-02dd-4940-ab95-10f58d7b4b31" /> 
+
+  
   <img width="800" height="817.96" alt="myportfolio-shot-3" src="https://github.com/user-attachments/assets/ce6cbbc3-65fb-469e-b923-656e0a47ee13" />
 
