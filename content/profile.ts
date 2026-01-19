@@ -54,7 +54,7 @@ export const profile: {
     },
     {
       label: "Email",
-      href: "mailto:erika.m.hashizume@email.com",
+      href: "mailto:erika.m.hashizume@gmail.com",
       icon: MailIcon,
     },
     {
