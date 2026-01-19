@@ -1,7 +1,8 @@
 ## My Portfolio for 2026
 _A new year, A new country, a new portfolio for a new role!_
 
-<img width="800" height="600" alt="myportfolio-shot" src="https://github.com/user-attachments/assets/05fe94fd-4ad8-46f6-a4d4-c74677a7edc5" />
+<img width="800" height="600" alt="myportfolio-shot" src="https://github.com/user-attachments/assets/223b22c7-b26b-4f75-9ee5-d9fd8bfb3295" />
+
 
 This is a personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 The goal of this project was to create a clean, modern space to showcase my projects, skills, and learning journey as a frontend-focused developer moving toward full-stack development.
