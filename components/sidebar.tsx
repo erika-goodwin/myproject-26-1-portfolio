@@ -81,7 +81,7 @@ export default function Sidebar() {
           <button
             className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
             onClick={() => {
-              navigator.clipboard.writeText("erika.m.hashizume@email.com");
+              navigator.clipboard.writeText("erika.m.hashizume@gmail.com");
               alert("Email copied!");
             }}
             aria-label="Copy email address"
