@@ -11,6 +11,7 @@ import {
   KeyRound,
   // Server,
   Database,
+  MessageCircleHeart,
 } from "lucide-react";
 import { ProjectItem, TechIconKey } from "@/content/project";
 import { useActiveItem } from "@/hooks/useActiveItem";
@@ -26,7 +27,11 @@ const techIconMap: Record<TechIconKey, React.ElementType> = {
   LocalStorage: Database,
   Supabase: Database,
   "Supabase Auth": KeyRound,
+  Vite: Code,
   PostgreSQL: Database,
+  "Node.js": Code,
+  Express: Code,
+  "REST APIs": Code,
 };
 
 type Props = {
@@ -47,7 +52,7 @@ export default function ProjectTile({ project }: Props) {
         // mobile activation
         active
           ? "bg-white shadow-xl border-off-pink group-hover/project:opacity-75 opacity-100"
-          : ""
+          : "",
       )}
     >
       {/* Header */}
@@ -55,19 +60,28 @@ export default function ProjectTile({ project }: Props) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center gap-6 py-6 px-4 lg:p-6 text-left"
       >
-        <div className="relative w-18 lg:w-32 h-20 rounded-md overflow-hidden bg-gray-100">
-          <Image
-            src={project.thumbnail}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
+        <div className="relative w-18 flex justify-center items-center lg:w-32 h-20 rounded-md overflow-hidden bg-gray-100">
+          {project.thumbnail === "" ? (
+            <MessageCircleHeart className="w-7 h-7 text-center" />
+          ) : (
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          )}
         </div>
 
         <h3 className="flex-1 text-lg font-bold">{project.title}</h3>
 
         {/* Links FOR desktop */}
         <div className="hidden lg:flex justify-end gap-4 mt-4">
+          {project.isOnGoing && (
+            <span className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
+              Current PJ
+            </span>
+          )}
           {project.links.website && (
             <a
               href={project.links.website}
@@ -115,7 +129,7 @@ export default function ProjectTile({ project }: Props) {
                     // Desktop hover
                     "group-hover/projectTile:bg-off-pink",
                     // mobile activation
-                    active ? "bg-off-pink" : ""
+                    active ? "bg-off-pink" : "",
                   )}
                 >
                   <Icon className="w-4 h-4 text-gray-700 mr-1" />
@@ -127,6 +141,11 @@ export default function ProjectTile({ project }: Props) {
 
           {/* Links FOR mobile */}
           <div className="flex lg:hidden justify-end gap-4 mt-4">
+            {project.isOnGoing && (
+              <span className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
+                Currently Working on
+              </span>
+            )}
             {project.links.website && (
               <a
                 href={project.links.website}
@@ -147,9 +166,11 @@ export default function ProjectTile({ project }: Props) {
             )}
           </div>
           {/* Project images */}
-          <div className="mt-4">
-            <ImageSlider images={project.images} />
-          </div>
+          {project.images.length !== 0 && project.images[0] !== "" && (
+            <div className="mt-4">
+              <ImageSlider images={project.images} />
+            </div>
+          )}
         </div>
       )}
     </div>
