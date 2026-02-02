@@ -13,6 +13,7 @@ export type TechIconKey =
   | "Github"
   | "JIRA"
   | "CSS/TailwindCSS"
+  | "WordPress"
   | "Astro";
 
 export type ExperienceItem = {
@@ -43,7 +44,7 @@ export const experiences: {
         "Enhancing user experience and conversion rates through A/B testing, UI refinements, and performance improvements",
         "Developing and maintaining WordPress websites for charity organizations, including creating seasonal landing pages, fixing UI/UX issues, and optimizing site performance.",
       ],
-      techs: ["HTML", "CSS", "JavaScript", "VWO"],
+      techs: ["HTML", "CSS", "JavaScript", "VWO", "WordPress"],
     },
     {
       id: "2",

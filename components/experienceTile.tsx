@@ -22,6 +22,7 @@ const techIconMap: Record<TechIconKey, React.ElementType> = {
   JIRA: EthernetPort,
   "CSS/TailwindCSS": Code,
   Astro: Database,
+  WordPress: Drill,
 };
 
 type Props = {
@@ -41,7 +42,7 @@ export default function ExperienceTile({ item }: Props) {
         // mobile activation
         active
           ? "bg-white shadow-xl border-off-pink group-hover/experience:opacity-75 opacity-100"
-          : ""
+          : "",
       )}
     >
       {/* Left time */}
@@ -73,7 +74,7 @@ export default function ExperienceTile({ item }: Props) {
                   // Desktop hover
                   " group-hover/experienceTile:bg-off-pink",
                   // mobile activation
-                  active ? "bg-off-pink" : ""
+                  active ? "bg-off-pink" : "",
                 )}
               >
                 <Icon className="w-4 h-4 text-gray-700" />

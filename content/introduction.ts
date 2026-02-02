@@ -2,7 +2,7 @@ export const introduction: {
   intro: string[];
 } = {
   intro: [
-    "I am a frontend / fullstack engineer with over three years of experience in conversion rate optimization and agency based development, and international professional experience across Japan and Canada. ",
+    "I am a fullstack developer with over three years of experience in conversion rate optimization and agency based development, and international professional experience across Japan and Canada. ",
     " I combine modern frontend development with an experimentation mindset to deliver measurable product impact, grounded in a strong foundation of engineering reliability and performance.",
     "I began my career as an aerospace engineer in Japan, where I developed a deep appreciation for precision, documentation, and problem solving under pressure in safety critical environments. After transitioning into web development, I spent several years working in CRO focused agencies, building and maintaining A/B tests, improving UX and performance, and collaborating closely with designers, strategists, and analysts to turn hypotheses into validated outcomes for larges cale websites.",
     "Today, I focus on building maintainable and performant web interfaces using React and Next.js. I enjoy learning new tools, patterns, and technologies, and I’m motivated by continuous growth—both technically and as a collaborator while applying experimentation and data informed thinking to product development.",
