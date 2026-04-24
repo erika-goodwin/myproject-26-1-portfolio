@@ -5,11 +5,18 @@ type ButtonLinkProps = {
   href: string; // link URL
   children: ReactNode; // button text
   className?: string; // optional extra Tailwind classes
+  idName?: string; // optional id for the anchor tag
 };
 
-const ButtonLink: FC<ButtonLinkProps> = ({ href, children, className }) => {
+const ButtonLink: FC<ButtonLinkProps> = ({
+  href,
+  children,
+  className,
+  idName,
+}) => {
   return (
     <a
+      id={idName}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
