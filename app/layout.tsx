@@ -44,6 +44,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          id="kameleoon-anti-flicker"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var kameleoonLoadingTimeout = 750;
+              window.kameleoonQueue = window.kameleoonQueue || [];
+              window.kameleoonStartLoadTime = Date.now();
+              if (!document.getElementById("kameleoonLoadingStyleSheet") && !window.kameleoonDisplayPageTimeOut) {
+                var kameleoonS = document.getElementsByTagName("script")[0];
+                var kameleoonCc = "html::after { content: ''; position: fixed; inset: 0; background: #fff; z-index: 2147483647; }";
+                var kameleoonStn = document.createElement("style");
+                kameleoonStn.type = "text/css";
+                kameleoonStn.id = "kameleoonLoadingStyleSheet";
+                if (kameleoonStn.styleSheet) { kameleoonStn.styleSheet.cssText = kameleoonCc; }
+                else { kameleoonStn.appendChild(document.createTextNode(kameleoonCc)); }
+                kameleoonS.parentNode.insertBefore(kameleoonStn, kameleoonS);
+                window.kameleoonDisplayPage = function(fromEngine) {
+                  if (!fromEngine) { window.kameleoonTimeout = true; }
+                  if (kameleoonStn.parentNode) { kameleoonStn.parentNode.removeChild(kameleoonStn); }
+                };
+                window.kameleoonDisplayPageTimeOut = window.setTimeout(window.kameleoonDisplayPage, kameleoonLoadingTimeout);
+              }
+            `,
+          }}
+        />
+      </head>
       <body className={`${rubik.variable} antialiased`}>
         <KameleoonScript />
         <GtagScript />
