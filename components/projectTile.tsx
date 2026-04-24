@@ -84,6 +84,7 @@ export default function ProjectTile({ project }: Props) {
           )}
           {project.links.website && (
             <a
+              id={`open a project - ` + project.title}
               href={project.links.website}
               target="_blank"
               className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
@@ -91,11 +92,13 @@ export default function ProjectTile({ project }: Props) {
               <Globe className="w-5 h-5" />
             </a>
           )}
+
           {project.links.github && (
             <a
+              id={`open a  project github - ` + project.title}
               href={project.links.github}
               target="_blank"
-              className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+              className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -148,18 +151,20 @@ export default function ProjectTile({ project }: Props) {
             )}
             {project.links.website && (
               <a
+                id={`open a project - ` + project.title}
                 href={project.links.website}
                 target="_blank"
-                className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+                className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
               >
                 <Globe className="w-5 h-5" />
               </a>
             )}
             {project.links.github && (
               <a
+                id={`open a  project github - ` + project.title}
                 href={project.links.github}
                 target="_blank"
-                className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+                className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
               >
                 <Github className="w-5 h-5" />
               </a>

@@ -28,9 +28,9 @@ export default function Projects() {
         <div className="flex flex-row items-center">
           <p className="mr-4 font-bold">View More </p>
           <ButtonLink
+            idName="Open Github - Project section"
             href={projects.link}
             className="mr-2"
-            idName="Open Github"
           >
             Github
           </ButtonLink>
