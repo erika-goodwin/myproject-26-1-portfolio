@@ -3,7 +3,11 @@ import Script from "next/script";
 export default function KameleoonScript() {
   return (
     <>
-      <Script id="kameleoon-anti-flicker-logic" type="text/javascript">
+      <Script
+        id="kameleoon-anti-flicker-logic"
+        type="text/javascript"
+        strategy="beforeInteractive"
+      >
         {` 
           // Duration in milliseconds to wait while the Kameleoon application file is loaded
           var kameleoonLoadingTimeout = 750;
@@ -47,7 +51,8 @@ export default function KameleoonScript() {
         src="//mw3bb7k31u.kameleoon.io/engine.js"
         async={true}
         fetchPriority="high"
-      ></Script>
+        strategy="beforeInteractive"
+      />
     </>
   );
 }
