@@ -4,7 +4,10 @@ import ButtonLink from "./botton";
 
 export default function Experience() {
   return (
-    <section id="experience" className="space-y-6 mt-24 scroll-mt-24 mx-auto max-w-[42rem] lg:max-w-none">
+    <section
+      id="experience"
+      className="space-y-6 mt-24 scroll-mt-24 mx-auto max-w-[42rem] lg:max-w-none"
+    >
       {/* Sticky header (mobile only) */}
       <div className="sticky top-0 z-20 bg-off-white lg:hidden ">
         <div className="flex items-center gap-3 px-4 py-3 border-b">
@@ -24,10 +27,16 @@ export default function Experience() {
 
         <div className="flex flex-row items-center">
           <p className="mr-4 font-bold">View Full Resume </p>
-          <ButtonLink href={experiences.resume.en} className="mr-2">
+          <ButtonLink
+            href={experiences.resume.en}
+            className="mr-2"
+            idName="EN Resume"
+          >
             EN
           </ButtonLink>
-          <ButtonLink href={experiences.resume.fr}>FR</ButtonLink>
+          <ButtonLink href={experiences.resume.fr} idName="FR Resume">
+            FR
+          </ButtonLink>
         </div>
       </div>
     </section>

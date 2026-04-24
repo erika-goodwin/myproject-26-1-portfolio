@@ -39,7 +39,7 @@ export default function Sidebar() {
                   "flex items-center gap-2 transition-all duration-300 hover:scale-105 transition-transform duration-200",
                   isActive
                     ? "text-off-blue font-semibold translate-x-1"
-                    : "text-gray-500 hover:text-gray-800"
+                    : "text-gray-500 hover:text-gray-800",
                 )}
               >
                 <Leaf
@@ -47,7 +47,7 @@ export default function Sidebar() {
                     "h-4 w-4 transition-all duration-300",
                     isActive
                       ? "opacity-100 scale-100 text-off-blue"
-                      : "opacity-0 scale-75"
+                      : "opacity-0 scale-75",
                   )}
                 />
                 {item?.label}
@@ -62,11 +62,12 @@ export default function Sidebar() {
             const Icon = item.icon;
             return (
               <a
+                id={`${item.label} Link`}
                 key={item.href}
                 href={item.href}
                 className={clsx(
                   "flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn",
-                  item.label === "Instagram" && "order-last"
+                  item.label === "Instagram" && "order-last",
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -79,6 +80,7 @@ export default function Sidebar() {
             );
           })}
           <button
+            id="Copy email address"
             className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
             onClick={() => {
               navigator.clipboard.writeText("erika.m.hashizume@gmail.com");
