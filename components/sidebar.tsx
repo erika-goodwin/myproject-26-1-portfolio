@@ -65,7 +65,7 @@ export default function Sidebar() {
                 key={item.href}
                 href={item.href}
                 className={clsx(
-                  "flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200",
+                  "flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn",
                   item.label === "Instagram" && "order-last"
                 )}
                 target="_blank"
@@ -79,7 +79,7 @@ export default function Sidebar() {
             );
           })}
           <button
-            className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+            className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
             onClick={() => {
               navigator.clipboard.writeText("erika.m.hashizume@gmail.com");
               alert("Email copied!");
