@@ -3,7 +3,15 @@
 import { ExperienceItem, TechIconKey } from "@/content/experience";
 import { useActiveItem } from "@/hooks/useActiveItem";
 
-import { Code, Drill, EthernetPort, Github, Database } from "lucide-react";
+import {
+  Code,
+  Drill,
+  EthernetPort,
+  Github,
+  Database,
+  Handshake,
+  Plane,
+} from "lucide-react";
 import clsx from "clsx";
 
 const techIconMap: Record<TechIconKey, React.ElementType> = {
@@ -23,6 +31,13 @@ const techIconMap: Record<TechIconKey, React.ElementType> = {
   "CSS/TailwindCSS": Code,
   Astro: Database,
   WordPress: Drill,
+  CRM: Handshake,
+  "GA4/GTM": Drill,
+  "ATA21 (Air Conditioning)": Plane,
+  "ATA27 (Flight Controls)": Plane,
+  "ATA29 (Hydraulic Power)": Plane,
+  "ATA30 (Ice and Rain Protection)": Plane,
+  "ATA36 (Pneumatic)": Plane,
 };
 
 type Props = {
@@ -77,7 +92,7 @@ export default function ExperienceTile({ item }: Props) {
                   active ? "bg-off-pink" : "",
                 )}
               >
-                <Icon className="w-4 h-4 text-gray-700" />
+                <Icon className="w-4 h-4 mr-0.5 text-gray-700" />
 
                 {tech}
               </div>

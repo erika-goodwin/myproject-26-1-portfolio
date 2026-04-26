@@ -14,7 +14,14 @@ export type TechIconKey =
   | "JIRA"
   | "CSS/TailwindCSS"
   | "WordPress"
-  | "Astro";
+  | "Astro"
+  | "CRM"
+  | "GA4/GTM"
+  | "ATA21 (Air Conditioning)"
+  | "ATA27 (Flight Controls)"
+  | "ATA29 (Hydraulic Power)"
+  | "ATA30 (Ice and Rain Protection)"
+  | "ATA36 (Pneumatic)";
 
 export type ExperienceItem = {
   id: string;
@@ -36,8 +43,21 @@ export const experiences: {
   experienceItems: [
     {
       id: "1",
+      company: "Kameleoon, France 🇫🇷",
+      title: "Technical Account Manager / Front End Developer",
+      time: "2026 - Present",
+      details: [
+        "Act as a technical lead to bridge the gap between client needs and platform capabilities, ensuring precise technical framing and time estimation for high-impact optimization projects.",
+        "Consult with technical stakeholders to present complex architectures and train users on leveraging APIs and SDKs to ensure platform autonomy and success.",
+        "Proactively diagnose and debug JavaScript code to resolve intricate client-side issues, ensuring the seamless integration of experimentation solutions across diverse web environments.",
+        "Build and customize performant digital experiences using JavaScript, HTML, and CSS to support and validate client experimentation and growth goals.",
+      ],
+      techs: ["CRM", "Kameleoon", "GA4/GTM", "HTML", "CSS", "JavaScript"],
+    },
+    {
+      id: "2",
       company: "Generosity X, Canada 🇨🇦",
-      title: "Web Developer",
+      title: "Web Developer / Freelancer",
       time: "2025 - Present",
       details: [
         "Executing website optimization and CRO experiments for non profit clients.",
@@ -47,7 +67,7 @@ export const experiences: {
       techs: ["HTML", "CSS", "JavaScript", "VWO", "WordPress"],
     },
     {
-      id: "2",
+      id: "3",
       company: "Conversion North America, Canada 🇨🇦",
       title: "CRO Web Developer",
       time: "2022 - 2025",
@@ -73,7 +93,7 @@ export const experiences: {
       ],
     },
     {
-      id: "3",
+      id: "4",
       company: "Jetpack Labs, Canada 🇨🇦",
       title: "Front End Developer",
       time: "Aug - Sep2024",
@@ -84,7 +104,7 @@ export const experiences: {
       techs: ["HTML", "CSS/TailwindCSS", "JavaScript", "Astro", "Github"],
     },
     {
-      id: "4",
+      id: "5",
       company: "AIRDO Co., Ltd.(Airline), Japan 🇯🇵",
       title: "Airplane Mechanical Engineer",
       time: "2017 - 2021",
@@ -92,7 +112,13 @@ export const experiences: {
         "Maintained and updated airplane manuals and analyzed reliability for B737 and B767 models, managing unscheduled failures and defects to ensure operational efficiency.",
         "Demonstrated strong planning, troubleshooting, and problem solving skills by effectively managing routine and urgent tasks and maintaining performance under pressure.",
       ],
-      techs: [],
+      techs: [
+        "ATA21 (Air Conditioning)",
+        "ATA27 (Flight Controls)",
+        "ATA29 (Hydraulic Power)",
+        "ATA30 (Ice and Rain Protection)",
+        "ATA36 (Pneumatic)",
+      ],
     },
   ],
 };
