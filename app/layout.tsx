@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import KameleoonScript from "@/app/kameleoonScript";
-import GtagScript from "@/app/gtagScript";
+import { KameleoonHead } from "@/integrations/Kameleoon/KameleoonHead";
+import { KameleoonHydrationReady } from "@/integrations/Kameleoon/KameleoonHydrationReady";
+import GtmScript from "@/integrations/gtm/gtmScript";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -45,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        {/* <script
           id="kameleoon-anti-flicker"
           dangerouslySetInnerHTML={{
             __html: `
@@ -69,11 +70,13 @@ export default function RootLayout({
               }
             `,
           }}
-        />
+        /> */}
+        <KameleoonHead />
       </head>
       <body className={`${rubik.variable} antialiased`}>
-        <KameleoonScript />
-        <GtagScript />
+        {/* <KameleoonScript /> */}
+        <KameleoonHydrationReady />
+        <GtmScript />
         {children}
       </body>
     </html>
