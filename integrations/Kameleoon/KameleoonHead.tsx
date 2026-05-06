@@ -11,16 +11,21 @@ html::after {
 }`;
 
 export function KameleoonHead() {
-    return (
-        <>
-            {/* Preload the engine so browser begins downloading ASAP */}
-            <link rel="preload" href={SITECODE_SRC} as="script" fetchPriority="high" />
-            {/* Anti-flicker stylesheet injected during SSR */}
-            <style
-                id="kameleoonLoadingStyleSheet"
-                suppressHydrationWarning
-                dangerouslySetInnerHTML={{ __html: ANTIFLICKER_CSS }}
-            />
-        </>
-    );
+  return (
+    <>
+      {/* Preload the engine so browser begins downloading ASAP */}
+      <link
+        rel="preload"
+        href={SITECODE_SRC}
+        as="script"
+        fetchPriority="high"
+      />
+      {/* Anti-flicker stylesheet injected during SSR */}
+      <style
+        id="kameleoonLoadingStyleSheet"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: ANTIFLICKER_CSS }}
+      />
+    </>
+  );
 }
