@@ -51,27 +51,27 @@ export default function ExperienceTile({ item }: Props) {
     <div
       ref={ref}
       className={clsx(
-        "group/experienceTile w-full flex shadow-md transition-shadow duration-300 px-3 py-6 lg:p-6 rounded-lg ",
+        "group/experienceTile w-full flex shadow-md transition-shadow duration-300 px-3 py-6 lg:p-6 rounded-lg border border-card-border",
         // Desktop hover
-        " hover:shadow-xl hover:bg-white hover:border-off-pink group-hover/experience:opacity-75 hover:opacity-100",
+        " hover:shadow-xl hover:bg-background hover:border-off-pink group-hover/experience:opacity-75 hover:opacity-100",
         // mobile activation
         active
-          ? "bg-white shadow-xl border-off-pink group-hover/experience:opacity-75 opacity-100"
+          ? "bg-background shadow-xl border-off-pink group-hover/experience:opacity-75 opacity-100"
           : "",
       )}
     >
       {/* Left time */}
-      <div className="w-18 lg:w-24 flex-shrink-0 text-gray-500 font-mono text-xs mt-2">
+      <div className="w-18 lg:w-24 flex-shrink-0 text-muted font-mono text-xs mt-2">
         {item.time}
       </div>
 
       {/* Right content */}
       <div className="ml-4 lg:ml-6 flex-1 w-4/5">
         <h3 className="font-bold text-lg text-accentred">{item.title}</h3>
-        <p className="text-sm text-gray-600 mb-2">{item.company}</p>
+        <p className="text-sm text-body mb-2">{item.company}</p>
 
         {/* Details */}
-        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+        <ul className="list-disc list-inside space-y-1 text-body text-sm">
           {item.details.map((d, i) => (
             <li key={i}>{d}</li>
           ))}
@@ -85,14 +85,14 @@ export default function ExperienceTile({ item }: Props) {
               <div
                 key={tech}
                 className={clsx(
-                  "flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs",
+                  "flex items-center space-x-1 bg-tag-bg px-2 py-1 rounded-md  mb-1 text-xs",
                   // Desktop hover
                   " group-hover/experienceTile:bg-off-pink",
                   // mobile activation
                   active ? "bg-off-pink" : "",
                 )}
               >
-                <Icon className="w-4 h-4 mr-0.5 text-gray-700" />
+                <Icon className="w-4 h-4 mr-0.5 text-body" />
 
                 {tech}
               </div>

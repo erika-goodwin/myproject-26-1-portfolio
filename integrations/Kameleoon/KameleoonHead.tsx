@@ -1,5 +1,5 @@
 // ⛔ No "use client" here - must stay server-side
-import { SITECODE_SRC } from "./sitecode";
+import { SITECODE_SRC } from "./sitecodeSrc";
 
 const ANTIFLICKER_CSS = `
 html::after {
