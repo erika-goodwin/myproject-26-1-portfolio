@@ -78,7 +78,7 @@ export default function ProjectTile({ project }: Props) {
         {/* Links FOR desktop */}
         <div className="hidden lg:flex justify-end gap-4 mt-4">
           {project.isOnGoing && (
-            <span className="flex items-center space-x-1 bg-tag-bg px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
+            <span className="flex items-center space-x-1 px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
               Current PJ
             </span>
           )}
@@ -145,7 +145,7 @@ export default function ProjectTile({ project }: Props) {
           {/* Links FOR mobile */}
           <div className="flex lg:hidden justify-end gap-4 mt-4">
             {project.isOnGoing && (
-              <span className="flex items-center space-x-1 bg-tag-bg px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
+              <span className="flex items-center space-x-1 px-2 py-1 rounded-md mb-1 text-xs bg-off-blue">
                 Currently Working on
               </span>
             )}

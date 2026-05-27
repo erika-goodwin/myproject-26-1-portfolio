@@ -13,6 +13,7 @@ import {
   Plane,
 } from "lucide-react";
 import clsx from "clsx";
+import twMarge from "tailwind-merge";
 
 const techIconMap: Record<TechIconKey, React.ElementType> = {
   HTML: Code,

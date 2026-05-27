@@ -27,7 +27,7 @@ function KameleoonInit() {
 
     console.log(">>>>> KameleoonInit() isDark:", isDark);
 
-    document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-theme", "light");
     // document.documentElement.setAttribute(
     //   "data-theme",
     //   isDark ? "dark" : "light",
