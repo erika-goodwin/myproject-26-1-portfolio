@@ -24,11 +24,11 @@ function KameleoonInit() {
       featureKey: "dark_mode",
     });
 
-    document.documentElement.setAttribute("data-theme", "dark");
-    // document.documentElement.setAttribute(
-    //   "data-theme",
-    //   isDark ? "dark" : "light",
-    // );
+    // document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light",
+    );
   }, [initialize, getVisitorCode, isFeatureFlagActive]);
 
   useEffect(() => {
