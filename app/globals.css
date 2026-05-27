@@ -26,7 +26,7 @@
   --color-off-blue: #819d8c;
   --color-main-black: #fffef3;
   /* --color-off-pink: #4a2625; */
-  --color-off-pink: #f0d4d3; /* dark mode pink for tag bg */
+  --color-off-pink: #837272; /* dark mode pink for tag bg */
   --color-card-bg: #2a2724; /* card resting bg */
   --color-card-hover: #332f2c; /* card hover bg instead of white */
   --color-muted: #a09890; /* replaces gray-500/600 */
@@ -44,6 +44,7 @@
   --color-off-white: var(--color-off-white);
   --color-off-blue: var(--color-off-blue);
   --color-main-black: var(--color-main-black);
+  --color-off-pink: var(--color-off-pink);
   --color-gray: var(--color-gray);
   --color-card-bg: var(--color-card-bg);
   --color-card-hover: var(--color-card-hover);

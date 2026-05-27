@@ -18,16 +18,13 @@ function KameleoonInit() {
     await initialize(); // wait for this first
 
     const visitorCode = getVisitorCode();
-    console.log(">>>>> KameleoonInit() visitorCode:", visitorCode);
     // only THEN check the flag
     const isDark = isFeatureFlagActive({
       visitorCode,
       featureKey: "dark_mode",
     });
 
-    console.log(">>>>> KameleoonInit() isDark:", isDark);
-
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "dark");
     // document.documentElement.setAttribute(
     //   "data-theme",
     //   isDark ? "dark" : "light",
@@ -53,7 +50,6 @@ export default function KameleoonProvider({
         siteCode: SITECODE,
         configuration: {
           updateInterval: 20,
-          // environment: Environment.Production,
           environment:
             process.env.NODE_ENV === "production"
               ? Environment.Production

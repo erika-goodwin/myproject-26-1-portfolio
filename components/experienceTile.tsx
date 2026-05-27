@@ -12,8 +12,8 @@ import {
   Handshake,
   Plane,
 } from "lucide-react";
-import clsx from "clsx";
-import twMarge from "tailwind-merge";
+import clsx, { ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 const techIconMap: Record<TechIconKey, React.ElementType> = {
   HTML: Code,
@@ -47,12 +47,13 @@ type Props = {
 
 export default function ExperienceTile({ item }: Props) {
   const { ref, active } = useActiveItem<HTMLDivElement>();
+  const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
   return (
     <div
       ref={ref}
-      className={clsx(
-        "group/experienceTile w-full flex shadow-md transition-shadow duration-300 px-3 py-6 lg:p-6 rounded-lg border border-card-border",
+      className={cn(
+        "group/experienceTile w-full flex shadow-md transition-shadow duration-300 px-3 py-6 lg:p-6 rounded-lg dark:border dark:border-card-border",
         // Desktop hover
         " hover:shadow-xl hover:bg-background hover:border-off-pink group-hover/experience:opacity-75 hover:opacity-100",
         // mobile activation
@@ -85,12 +86,12 @@ export default function ExperienceTile({ item }: Props) {
             return (
               <div
                 key={tech}
-                className={clsx(
-                  "flex items-center space-x-1 bg-tag-bg px-2 py-1 rounded-md  mb-1 text-xs",
-                  // Desktop hover
-                  " group-hover/experienceTile:bg-off-pink",
+                className={cn(
+                  "flex items-center space-x-1 px-2 py-1 rounded-md  mb-1 text-xs bg-tag-bg",
                   // mobile activation
                   active ? "bg-off-pink" : "",
+                  // Desktop hover
+                  "group-hover/experienceTile:bg-off-pink",
                 )}
               >
                 <Icon className="w-4 h-4 mr-0.5 text-body" />
