@@ -6,11 +6,13 @@ import ScrollAwareLayout from "@/components/scrollAwareLayout";
 
 export default function Home() {
   return (
-    <ScrollAwareLayout>
-      <About />
-      <Experience />
-      <Projects />
-      <Cro />
-    </ScrollAwareLayout>
+    <>
+      <ScrollAwareLayout>
+        <About />
+        <Experience />
+        <Projects />
+        <Cro />
+      </ScrollAwareLayout>
+    </>
   );
 }

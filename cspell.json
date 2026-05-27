@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": ["typescript", "html", "css"],
+  "ignorePaths": [
+    "node_modules",
+    ".next",
+    "out",
+    "dist",
+    "public/images",
+    "**/*.min.*",
+    "**/*.snap"
+  ],
+  "words": [
+    "Kameleoon",
+    "gtm",
+    "cro",
+    "lucide",
+    "framer-motion",
+    "nextjs",
+    "TailwindCSS",
+    "tsx",
+    "ReactDOM",
+    "portfolio",
+    "sitecode"
+  ]
+}

@@ -20,7 +20,7 @@ const ButtonLink: FC<ButtonLinkProps> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center px-6 py-3 hover:bg-white font-semibold rounded-4xl shadow-md hover:text-off-blue hover:scale-105 transition-transform duration-200 ${className} btn`}
+      className={`inline-flex items-center px-6 py-3 hover:bg-background font-semibold rounded-4xl shadow-md hover:text-off-blue hover:scale-105 transition-transform duration-200 ${className} btn dark:border dark:border-card-border`}
     >
       {children}
       <ArrowUpRight className="w-4 h-4 ml-2" />

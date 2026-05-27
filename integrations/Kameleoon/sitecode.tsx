@@ -1,2 +1,1 @@
-export const SITECODE_SRC = "https://mw3bb7k31u.kameleoon.io/engine.js";
-
+export const SITECODE = "mw3bb7k31u";

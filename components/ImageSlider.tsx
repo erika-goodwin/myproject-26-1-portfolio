@@ -16,7 +16,7 @@ export default function ImageSlider({ images }: Props) {
   const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
 
   return (
-    <div className="relative w-full h-60 rounded-md overflow-hidden bg-white group">
+    <div className="relative w-full h-60 rounded-md overflow-hidden bg-background group">
       <AnimatePresence mode="wait">
         <motion.div
           key={images[index]}
@@ -49,7 +49,7 @@ export default function ImageSlider({ images }: Props) {
             <div className="w-1/2 group/leftSlider " onClick={prev}>
               <button
                 // onClick={prev}
-                className="flex absolute left-1 top-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow  group-hover/leftSlider:text-off-blue group-hover/leftSlider:shadow-lg group-hover/leftSlider:scale-105 transition-transform duration-200"
+                className="flex absolute left-1 top-1/2 -translate-y-1/2 bg-background rounded-full p-1 shadow  group-hover/leftSlider:text-off-blue group-hover/leftSlider:shadow-lg group-hover/leftSlider:scale-105 transition-transform duration-200"
               >
                 <ChevronLeft size={16} />
               </button>
@@ -58,7 +58,7 @@ export default function ImageSlider({ images }: Props) {
             <div className="w-1/2 group/rightSlider" onClick={next}>
               <button
                 // onClick={next}
-                className="flex absolute right-1 top-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow group-hover/rightSlider:text-off-blue  group-hover/rightSlider:shadow-lg group-hover/rightSlider:scale-105 transition-transform duration-200"
+                className="flex absolute right-1 top-1/2 -translate-y-1/2 bg-background rounded-full p-1 shadow group-hover/rightSlider:text-off-blue  group-hover/rightSlider:shadow-lg group-hover/rightSlider:scale-105 transition-transform duration-200"
               >
                 <ChevronRight size={16} />
               </button>

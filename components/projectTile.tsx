@@ -46,12 +46,12 @@ export default function ProjectTile({ project }: Props) {
     <div
       ref={ref}
       className={clsx(
-        "group/projectTile rounded-lg  shadow-md  transition-shadow duration-300",
+        "group/projectTile rounded-lg  shadow-md  transition-shadow duration-300  border border-card-border",
         // Desktop hover
-        " hover:shadow-xl hover:bg-white hover:border-off-pink group-hover/project:opacity-75  hover:opacity-100",
+        " hover:shadow-xl hover:bg-background hover:border-off-pink group-hover/project:opacity-75  hover:opacity-100",
         // mobile activation
         active
-          ? "bg-white shadow-xl border-off-pink group-hover/project:opacity-75 opacity-100"
+          ? "bg-background shadow-xl border-off-pink group-hover/project:opacity-75 opacity-100"
           : "",
       )}
     >
@@ -60,7 +60,7 @@ export default function ProjectTile({ project }: Props) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center gap-6 py-6 px-4 lg:p-6 text-left"
       >
-        <div className="relative w-18 flex justify-center items-center lg:w-32 h-20 rounded-md overflow-hidden bg-gray-100">
+        <div className="relative w-18 flex justify-center items-center lg:w-32 h-20 rounded-md overflow-hidden bg-tag-bg">
           {project.thumbnail === "" ? (
             <MessageCircleHeart className="w-7 h-7 text-center" />
           ) : (
@@ -78,7 +78,7 @@ export default function ProjectTile({ project }: Props) {
         {/* Links FOR desktop */}
         <div className="hidden lg:flex justify-end gap-4 mt-4">
           {project.isOnGoing && (
-            <span className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
+            <span className="flex items-center space-x-1 px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
               Current PJ
             </span>
           )}
@@ -87,7 +87,7 @@ export default function ProjectTile({ project }: Props) {
               id={`open a project - ` + project.title}
               href={project.links.website}
               target="_blank"
-              className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200"
+              className="text-body hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-background hover:shadow-md hover:scale-105 transition-transform duration-200"
             >
               <Globe className="w-5 h-5" />
             </a>
@@ -98,7 +98,7 @@ export default function ProjectTile({ project }: Props) {
               id={`open a  project github - ` + project.title}
               href={project.links.github}
               target="_blank"
-              className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
+              className="text-body hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-background hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -106,16 +106,16 @@ export default function ProjectTile({ project }: Props) {
         </div>
 
         {open ? (
-          <ChevronUp className="w-5 h-5 text-gray-500" />
+          <ChevronUp className="w-5 h-5 text-muted" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-gray-500" />
+          <ChevronDown className="w-5 h-5 text-muted" />
         )}
       </button>
 
       {/* Content */}
       {open && (
         <div className="px-4 lg:px-6 pb-6 pl-4 lg:pl-6 lg:pl-[9.5rem]">
-          <ul className="space-y-2 text-sm text-gray-700">
+          <ul className="space-y-2 text-sm text-body">
             {project.description.map((line, i) => (
               <li key={i}>• {line}</li>
             ))}
@@ -128,14 +128,14 @@ export default function ProjectTile({ project }: Props) {
                 <span
                   key={index}
                   className={clsx(
-                    "flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs ",
+                    "flex items-center space-x-1 bg-tag-bg px-2 py-1 rounded-md  mb-1 text-xs ",
                     // Desktop hover
                     "group-hover/projectTile:bg-off-pink",
                     // mobile activation
                     active ? "bg-off-pink" : "",
                   )}
                 >
-                  <Icon className="w-4 h-4 text-gray-700 mr-1" />
+                  <Icon className="w-4 h-4 text-body mr-1" />
                   {tech}
                 </span>
               );
@@ -145,7 +145,7 @@ export default function ProjectTile({ project }: Props) {
           {/* Links FOR mobile */}
           <div className="flex lg:hidden justify-end gap-4 mt-4">
             {project.isOnGoing && (
-              <span className="flex items-center space-x-1 bg-gray-100 px-2 py-1 rounded-md  mb-1 text-xs bg-off-blue">
+              <span className="flex items-center space-x-1 px-2 py-1 rounded-md mb-1 text-xs bg-off-blue">
                 Currently Working on
               </span>
             )}
@@ -154,7 +154,7 @@ export default function ProjectTile({ project }: Props) {
                 id={`open a project - ` + project.title}
                 href={project.links.website}
                 target="_blank"
-                className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
+                className="text-body hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-background hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
               >
                 <Globe className="w-5 h-5" />
               </a>
@@ -164,7 +164,7 @@ export default function ProjectTile({ project }: Props) {
                 id={`open a  project github - ` + project.title}
                 href={project.links.github}
                 target="_blank"
-                className="text-gray-600 hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
+                className="text-body hover:text-off-blue flex items-center space-x-1 p-2 rounded-full  hover:bg-background hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
               >
                 <Github className="w-5 h-5" />
               </a>
