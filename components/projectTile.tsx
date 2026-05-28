@@ -46,12 +46,12 @@ export default function ProjectTile({ project }: Props) {
     <div
       ref={ref}
       className={clsx(
-        "group/projectTile rounded-lg  shadow-md  transition-shadow duration-300  border border-card-border",
+        "group/projectTile rounded-lg  shadow-md  transition-shadow duration-300  dark:border dark:border-card-border",
         // Desktop hover
         " hover:shadow-xl hover:bg-background hover:border-off-pink group-hover/project:opacity-75  hover:opacity-100",
         // mobile activation
         active
-          ? "bg-background shadow-xl border-off-pink group-hover/project:opacity-75 opacity-100"
+          ? "bg-background shadow-xl dark:border-off-pink group-hover/project:opacity-75 opacity-100"
           : "",
       )}
     >
