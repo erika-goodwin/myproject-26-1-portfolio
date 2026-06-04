@@ -34,10 +34,10 @@ function KameleoonInit() {
       // This is for demonstration purposes only — in a real app you would want to manage this data at a higher level and not call this on every render of the banner component
       await getRemoteVisitorData({ visitorCode });
       console.log(">>>  Initializing Kameleoon SDK... | getRemoteVisitorData");
-      console.log(
-        ">>>  Initializing Kameleoon SDK... | local",
-        Kameleoon.API.CurrentVisit.customData,
-      );
+      // console.log(
+      //   ">>>  Initializing Kameleoon SDK... | local",
+      //   Kameleoon.API.CurrentVisit.customData,
+      // );
       const jsonData = await getRemoteData(visitorCode);
       console.log(
         ">>>  Initializing Kameleoon SDK... | getRemoteData",
