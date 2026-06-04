@@ -7,11 +7,15 @@ import { AtSign } from "lucide-react";
 
 import { profile } from "@/content/profile";
 import Image from "next/image";
+import { useAvailability } from "@/integrations/Kameleoon/context/AvailabilityContext";
 
 const sectionIds = ["about", "experience", "projects", "cro"];
 
 export default function Sidebar() {
   const activeId = useActiveSection(sectionIds);
+  const { data: availabilityData } = useAvailability();
+
+  console.log(">> Sidebar rendered, ", availabilityData);
 
   return (
     <aside className="mt-30 lg:mt-0 lg:sticky lg:top-24 h-fit">
@@ -66,7 +70,7 @@ export default function Sidebar() {
                 key={item.href}
                 href={item.href}
                 className={clsx(
-                  "flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn",
+                  "flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-background hover:shadow-md hover:scale-105 transition-transform duration-200 btn",
                   item.label === "Instagram" && "order-last",
                 )}
                 target="_blank"
@@ -81,7 +85,7 @@ export default function Sidebar() {
           })}
           <button
             id="Copy email address"
-            className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-white hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
+            className="flex items-center space-x-1 p-2 rounded-full hover:text-off-pink hover:bg-background hover:shadow-md hover:scale-105 transition-transform duration-200 btn"
             onClick={() => {
               navigator.clipboard.writeText("erika.m.hashizume@gmail.com");
               alert("Email copied!");
