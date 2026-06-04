@@ -4,57 +4,77 @@ import {
   KameleoonProviderSSR,
   useInitialize,
   useVisitorCode,
-  useFeatureFlag,
   useData,
   CustomData,
+  useFeatureFlag,
 } from "@kameleoon/react-sdk";
-// import { useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { SITECODE } from "./sitecode";
-import { useDarkMode } from "@/components/Kameleoon/useDarkMode";
+import { DarkMode } from "@/components/KameleoonFlags/DarkMode";
+import { AvailabilityBanner } from "@/components/KameleoonFlags/AvailabilityBanner";
+import { AvailabilityProvider } from "@/integrations/Kameleoon/context/AvailabilityContext";
 
 function KameleoonInit() {
-  // const { initialize } = useInitialize();
-  // const { getVisitorCode } = useVisitorCode();
-  // const { isFeatureFlagActive, getEngineTrackingCode } = useFeatureFlag();
-  // const { addData, flush } = useData();
-  // const init = useCallback(async () => {
-  //   // 1. initialize SDK
-  //   await initialize(); // wait for this first
-  //   const visitorCode = getVisitorCode();
-  //   // 2. Set your custom data via SDK (NOT via Global Script)
-  //   // CUSTOM DATA SET UP ========
-  //   const isDarkMode = window.matchMedia(
-  //     "(prefers-color-scheme: dark)",
-  //   ).matches;
-  //   const customData = new CustomData(4, String(isDarkMode));
-  //   addData(visitorCode, customData);
-  //   // console.log(">>>> addData() isDarkmode:", isDarkMode);
-  //   // 3. Flush pushes it to the engine so targeting rules can see it
-  //   await flush(visitorCode);
-  //   // 4. NOW evaluate — the SDK has all the data it needs
-  //   const isDark = isFeatureFlagActive({
-  //     visitorCode,
-  //     featureKey: "dark_mode",
-  //   });
-  //   // console.log(">>>> isDark (FF):", isDark);
-  //   // document.documentElement.setAttribute("data-theme", "dark");
-  //   document.documentElement.setAttribute(
-  //     "data-theme",
-  //     isDark ? "dark" : "light",
-  //   );
-  //   // Send tracking code to Engine | activatedInVisit
-  //   const trackingCode = getEngineTrackingCode(visitorCode);
-  //   // console.log(">>>> trackingCode:", trackingCode);
-  //   const script = document.createElement("script");
-  //   script.text = trackingCode;
-  //   document.head.appendChild(script);
-  // }, [initialize, getVisitorCode, isFeatureFlagActive, getEngineTrackingCode]);
-  // useEffect(() => {
-  //   init();
-  // }, [init]);
+  const { initialize } = useInitialize();
+  const { getVisitorCode } = useVisitorCode();
+  const { getRemoteVisitorData, addData, flush, getRemoteData } = useData();
 
-  useDarkMode();
-  return null;
+  // const { isFeatureFlagActive, getEngineTrackingCode } = useFeatureFlag();
+  const [visitorCode, setVisitorCode] = useState<string | null>(null);
+
+  useEffect(() => {
+    // 1. initialize SDK
+    initialize().then(async () => {
+      console.log(">>>  Initializing Kameleoon SDK...");
+      const visitorCode = getVisitorCode();
+      console.log(
+        ">>>  Initializing Kameleoon SDK... | visitorCode:",
+        visitorCode,
+      );
+      // This is for demonstration purposes only — in a real app you would want to manage this data at a higher level and not call this on every render of the banner component
+      await getRemoteVisitorData({ visitorCode });
+      console.log(">>>  Initializing Kameleoon SDK... | getRemoteVisitorData");
+      console.log(
+        ">>>  Initializing Kameleoon SDK... | local",
+        Kameleoon.API.CurrentVisit.customData,
+      );
+      const jsonData = await getRemoteData(visitorCode);
+      console.log(
+        ">>>  Initializing Kameleoon SDK... | getRemoteData",
+        jsonData,
+      );
+      if (jsonData && typeof jsonData === "string") {
+        const data = JSON.parse(jsonData);
+        if (data?.Industry) {
+          addData(visitorCode, new CustomData(2, String(data.Industry)));
+
+          await flush(visitorCode);
+        }
+      } else if (jsonData && typeof jsonData === "object") {
+        // it may already be parsed
+        const data = jsonData as Record<string, unknown>;
+        if (data?.Industry) {
+          addData(visitorCode, new CustomData(2, String(data.Industry)));
+
+          await flush(visitorCode);
+        }
+      }
+
+      setVisitorCode(visitorCode);
+    });
+  }, []);
+
+  if (!visitorCode) return null; // wait until ready
+
+  return (
+    <>
+      <DarkMode visitorCode={visitorCode} featureKey="dark_mode" />
+      <AvailabilityBanner
+        visitorCode={visitorCode}
+        featureKey="availability_banner"
+      />
+    </>
+  );
 }
 
 export default function KameleoonProvider({
@@ -76,8 +96,10 @@ export default function KameleoonProvider({
         },
       }}
     >
-      <KameleoonInit />
-      {children}
+      <AvailabilityProvider>
+        <KameleoonInit />
+        {children}
+      </AvailabilityProvider>
     </KameleoonProviderSSR>
   );
 }

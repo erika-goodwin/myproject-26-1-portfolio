@@ -8,7 +8,7 @@ type Props = {
 
 export default function MobileSectionHeader({ title }: Props) {
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 lg:hidden bg-off-white/90 backdrop-blur-sm border-b">
+    <div className="fixed top-0 left-0 right-0 z-40 lg:hidden bg-background/90 backdrop-blur-sm border-b">
       {/* Inner content container */}
       <div
         className="
