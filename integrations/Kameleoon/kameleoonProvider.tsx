@@ -38,27 +38,27 @@ function KameleoonInit() {
       //   ">>>  Initializing Kameleoon SDK... | local",
       //   Kameleoon.API.CurrentVisit.customData,
       // );
-      const jsonData = await getRemoteData(visitorCode);
-      console.log(
-        ">>>  Initializing Kameleoon SDK... | getRemoteData",
-        jsonData,
-      );
-      if (jsonData && typeof jsonData === "string") {
-        const data = JSON.parse(jsonData);
-        if (data?.Industry) {
-          addData(visitorCode, new CustomData(2, String(data.Industry)));
+      // const jsonData = await getRemoteData(visitorCode);
+      // console.log(
+      //   ">>>  Initializing Kameleoon SDK... | getRemoteData",
+      //   jsonData,
+      // );
+      // if (jsonData && typeof jsonData === "string") {
+      //   const data = JSON.parse(jsonData);
+      //   if (data?.Industry) {
+      //     addData(visitorCode, new CustomData(2, String(data.Industry)));
 
-          await flush(visitorCode);
-        }
-      } else if (jsonData && typeof jsonData === "object") {
-        // it may already be parsed
-        const data = jsonData as Record<string, unknown>;
-        if (data?.Industry) {
-          addData(visitorCode, new CustomData(2, String(data.Industry)));
+      //     await flush(visitorCode);
+      //   }
+      // } else if (jsonData && typeof jsonData === "object") {
+      //   // it may already be parsed
+      //   const data = jsonData as Record<string, unknown>;
+      //   if (data?.Industry) {
+      //     addData(visitorCode, new CustomData(2, String(data.Industry)));
 
-          await flush(visitorCode);
-        }
-      }
+      //     await flush(visitorCode);
+      //   }
+      // }
 
       setVisitorCode(visitorCode);
     });
