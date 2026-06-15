@@ -8,7 +8,7 @@ export const introduction: {
     "I am a builder at heart. Whether I am architecting a complex React/Next.js frontend or advising on enterprise-scale experimentation logic, my goal is always the same: building reliable, performant systems that drive measurable product impact. I thrive at the intersection of clean code and data-informed strategy.",
     "Beyond the Code:",
     "Discipline is my daily practice. Whether I'm optimizing a client's testing stack or training for CrossFit / HYROX (participated in the 2025 and in the 2026 Women’s Doubles), I thrive on consistency, curiosity, and measurable growth.",
-    "I am a full-stack developer with over three years of experience in conversion rate optimization and agency-based development, and a total of 7+ years of international professional experience across Japan, Canada, and France.",
+    // "I am a full-stack developer with over three years of experience in conversion rate optimization and agency-based development, and a total of 7+ years of international professional experience across Japan, Canada, and France.",
 
     // " I combine modern frontend development with an experimentation mindset to deliver measurable product impact, grounded in a strong foundation of engineering reliability and performance.",
     // "I began my career as an aerospace engineer in Japan, where I developed a deep appreciation for precision, documentation, and problem solving under pressure in safety critical environments. After transitioning into web development, I spent several years working in CRO focused agencies, building and maintaining A/B tests, improving UX and performance, and collaborating closely with designers, strategists, and analysts to turn hypotheses into validated outcomes for larges cale websites.",
