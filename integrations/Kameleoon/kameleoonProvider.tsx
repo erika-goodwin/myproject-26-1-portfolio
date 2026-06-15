@@ -20,7 +20,7 @@ function KameleoonInit() {
   const { getRemoteVisitorData, addData, flush, getRemoteData } = useData();
 
   // const { isFeatureFlagActive, getEngineTrackingCode } = useFeatureFlag();
-  const [visitorCode, setVisitorCode] = useState<string | null>(null);
+  // const [visitorCode, setVisitorCode] = useState<string | null>(null);
 
   useEffect(() => {
     // 1. initialize SDK
@@ -33,7 +33,11 @@ function KameleoonInit() {
       );
       // This is for demonstration purposes only — in a real app you would want to manage this data at a higher level and not call this on every render of the banner component
       await getRemoteVisitorData({ visitorCode });
-      console.log(">>>  Initializing Kameleoon SDK... | getRemoteVisitorData");
+      // console.log(">>>  Initializing Kameleoon SDK... | getRemoteVisitorData");
+      // console.log(
+      //   ">>>  Initializing Kameleoon SDK... | console",
+      //   Kameleoon.API.CurrentVisit.customData,
+      // );
       // console.log(
       //   ">>>  Initializing Kameleoon SDK... | local",
       //   Kameleoon.API.CurrentVisit.customData,
@@ -60,21 +64,21 @@ function KameleoonInit() {
       //   }
       // }
 
-      setVisitorCode(visitorCode);
+      // setVisitorCode(visitorCode);
     });
   }, []);
 
-  if (!visitorCode) return null; // wait until ready
+  // if (!visitorCode) return null; // wait until ready
 
-  return (
-    <>
-      <DarkMode visitorCode={visitorCode} featureKey="dark_mode" />
-      <AvailabilityBanner
-        visitorCode={visitorCode}
-        featureKey="availability_banner"
-      />
-    </>
-  );
+  // return (
+  //   <>
+  //     <DarkMode visitorCode={visitorCode} featureKey="dark_mode" />
+  //     <AvailabilityBanner
+  //       visitorCode={visitorCode}
+  //       featureKey="availability_banner"
+  //     />
+  //   </>
+  // );
 }
 
 export default function KameleoonProvider({
