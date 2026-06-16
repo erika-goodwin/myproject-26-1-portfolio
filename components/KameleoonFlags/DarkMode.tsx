@@ -40,7 +40,6 @@ export function DarkMode({
       visitorCode,
       featureKey,
     });
-    // console.log(">>>> Dark mode flag active?", isDark);
     document.documentElement.setAttribute(
       "data-theme",
       isDark ? "dark" : "light",
@@ -52,7 +51,6 @@ export function DarkMode({
     script.text = trackingCode;
     document.head.appendChild(script);
   }, [isFeatureFlagActive, getEngineTrackingCode]);
-  // }, [initialize, getVisitorCode, isFeatureFlagActive, getEngineTrackingCode]);
 
   useEffect(() => {
     init();
