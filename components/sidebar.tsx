@@ -15,7 +15,13 @@ export default function Sidebar() {
   const activeId = useActiveSection(sectionIds);
   const { data: availabilityData } = useAvailability();
 
-  console.log(">> Sidebar rendered, ", availabilityData);
+  console.log(">>> Sidebar availabilityData:", availabilityData);
+  console.log(
+    ">>> Sidebar availabilityData?.display !== hidden:",
+    availabilityData?.display,
+    availabilityData?.textWeight,
+    availabilityData?.textWeight !== "hide",
+  );
 
   return (
     <aside className="mt-30 lg:mt-0 lg:sticky lg:top-24 h-fit">
@@ -26,7 +32,23 @@ export default function Sidebar() {
           <p className="mt-2 text-md font-bold">{profile.title}</p>
           <p className="mt-2 text-sm">{profile.intro}</p>
           <p className="mt-2 text-sm ">{profile.location}</p>
-          <p className="mt-2 text-sm ">{profile.availability}</p>
+          {/* [FF: availability_banner] — replace with static text when flag is retired */}
+          {availabilityData === null ? (
+            // FF off — static fallback
+            <p className="mt-2 text-sm">{profile.availability}</p>
+          ) : availabilityData.display === "hidden" || availabilityData.textWeight === "hide" ? (
+            // FF on, hidden variation
+            <p className="mt-2 text-sm hidden">{availabilityData.text}</p>
+          ) : (
+            // FF on, visible variation
+            <p className={clsx(
+              "mt-2 text-sm",
+              availabilityData.textWeight === "bold" && "font-bold",
+              availabilityData.textWeight === "underline" && "underline",
+            )}>
+              {availabilityData.text}
+            </p>
+          )}
         </div>
 
         {/* Table of contents */}
