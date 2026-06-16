@@ -17,7 +17,7 @@ function KameleoonInit() {
   const { initialize } = useInitialize();
   const { getVisitorCode } = useVisitorCode();
   const { isFeatureFlagActive, getEngineTrackingCode } = useFeatureFlag();
-  const { addData, flush } = useData();
+  const { addData, flush, getRemoteVisitorData } = useData();
   const [visitorCode, setVisitorCode] = useState<string | null>(null);
 
   const init = useCallback(async () => {
@@ -49,7 +49,10 @@ function KameleoonInit() {
     script.text = trackingCode;
     document.head.appendChild(script);
 
-    // 5. Signal that init is done — flag components mount after this
+    // 5. Fetch visitor's stored data from server (custom data set by other experiments/sources)
+    await getRemoteVisitorData({ visitorCode: vc });
+
+    // 6. Signal that init is done — flag components mount after this
     setVisitorCode(vc);
   }, [
     initialize,
@@ -58,6 +61,7 @@ function KameleoonInit() {
     getEngineTrackingCode,
     addData,
     flush,
+    getRemoteVisitorData,
   ]);
 
   useEffect(() => {
